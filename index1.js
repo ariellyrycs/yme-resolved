@@ -1,5 +1,6 @@
 
 
+
 var fs = require('fs');
 var CsvReadableStream = require('csv-reader');
 
@@ -130,10 +131,13 @@ let calculate3 = stands => {
   return availableTimeStands;
 };
 
-readFile('OffTheGridData.csv')
+readFile('__filename')
   .then(data => {
     let newStructure = restructure(data);
+    //console.log(newStructure);
     console.log(calculate2(newStructure));
+
     console.log(calculate3(newStructure));
+    //console.log(newStructure);
 
   });
